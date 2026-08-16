@@ -2,7 +2,8 @@ name: Deploy Application
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -10,10 +11,17 @@ jobs:
     runs-on: [self-hosted, mazorya]
 
     steps:
-      - name: Checkout Code
+      # ۱. دریافت آخرین نسخه از کدهای ریپازیتوری
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Deploy with Docker
+      # ۲. ریستارت و بیلد کانتینرها روی سرور
+      - name: Build and Deploy via Docker Compose
         run: |
           docker compose down
           docker compose up -d --build
+
+      # ۳. پاکسازی ایمیج‌های قدیمی و بدون استفاده (جهت جلوگیری از پر شدن حافظه سرور)
+      - name: Cleanup unused Docker images
+        run: |
+          docker image prune -f
