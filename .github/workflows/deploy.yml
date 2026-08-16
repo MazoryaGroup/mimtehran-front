@@ -1,18 +1,16 @@
-name: Deploy Mimtehran Front
+name: Runner Test
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  test:
     runs-on: [self-hosted, mazorya]
 
     steps:
-      - name: Deploy project
+      - name: Test Runner
         run: |
-          cd /opt/docker/stacks/mimtehran-front/mimtehran-front
-          git fetch origin main
-          git reset --hard origin/main
-          docker compose up -d --build
+          echo "RUNNER IS WORKING"
+          hostname
+          whoami
+          docker --version
