@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: [mazorya]
+    runs-on: [mazorya,]
 
     steps:
       - name: Test Runner
