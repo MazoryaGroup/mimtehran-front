@@ -5,7 +5,7 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, mazorya]
+    runs-on: [mazorya]
 
     steps:
       - name: Test Runner
@@ -13,4 +13,4 @@ jobs:
           echo "RUNNER IS WORKING"
           hostname
           whoami
-          docker --version
+          docker --version 
