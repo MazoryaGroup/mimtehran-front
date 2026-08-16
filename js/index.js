@@ -2,7 +2,7 @@
 (function() {
     'use strict';
 
-    const API_BASE_URL = 'https://api.mimtehran.ir/apiiiooooi';
+    const API_BASE_URL = 'https://api.mimtehran.ir/apiiiooooooooi';
 
     // ============================
     // ===== بخش صفحه اصلی (index) =====
