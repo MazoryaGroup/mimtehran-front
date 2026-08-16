@@ -500,7 +500,7 @@ async function loadProducts() {
                 
                 <div class="instagram">
                     <div class="instagram-title">MIM_TEHRAN@</div>
-                    <a href="#" class="instagram-link">دنبال کنید در اینستاگرام →</a>
+                    <a href="#" class="instagram-link">دنبال کنید در اینستاگراممم →</a>
                 </div>
             </div>
         `;
