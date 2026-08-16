@@ -1,16 +1,19 @@
-name: Runner Test
+name: Deploy Application
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  test:
+  deploy:
     runs-on: [self-hosted, mazorya]
 
     steps:
-      - name: Test Runner
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy with Docker
         run: |
-          echo "RUNNER IS WORKING"
-          hostname
-          whoami
-          docker --version
+          docker compose down
+          docker compose up -d --build
